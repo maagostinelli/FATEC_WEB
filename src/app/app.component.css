@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+header {
+    background-color: #C40008;
+    height: 90px;
+}
+
+.header {
+    font-family: 'Josefin Sans', 'Helvetica', sans-serif;
+    height: 50px;
+}
+
+#logo {
+    height: 36px;
+    width: 36px;
+}
+
+.pesquisa {
+    height: 36px;
+    width: 280px;
+    border-radius: 18px;
+}
+
+#pesquisa {
+    background-color: transparent;
+    border: 0;
+    padding-top: 6px;
+    font-size: 16px;
+    width: 230px;
+}
+
+#pesquisa:focus {
+    border: 0;
+    outline: none;
+}
+
+#userIcon {
+    height: 36px;
+    width: 36px;
+}
+
+#userIcon>img {
+    height: 36px;
+    width: 36px;
+}
+
+.navbar {
+    font-family: 'Josefin Sans', 'Helvetica', sans-serif;
+    font-size: 18px;
+    height: 40px;
+}
+
+.nav-link {
+    color: azure;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+@media screen and (orientation: portrait) {
+    div.header {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #logo, #userIcon {
+        width: 24px;
+    }
+
+    .pesquisa {
+        width: 200px;
+    }
+}

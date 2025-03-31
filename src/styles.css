@@ -1,0 +1,40 @@
+/*
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: black;
+}
+
+header {
+    background-color: white;
+    width: 100%;
+    padding: 10px;
+}
+
+nav {
+    color: blue;
+}
+
+a {
+    color: blue;
+}
+
+div {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 20px 20px 20px;
+}
+
+@media screen and (orientation: portrait) {
+    body{
+        margin: 0px;
+    }
+    div {
+        width: 100%;
+    }
+    label {
+        width: 80%;
+        text-align: left;
+    }
+}
+*/
