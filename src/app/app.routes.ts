@@ -10,7 +10,7 @@ export const routes: Routes = [
     {path: "cadastro-cliente", component:CadastroClienteComponent},
     {path: "cesta", component:CestaComponent},
     {path: "contato", component:ContatoComponent},
-    {path: "detalhe-produto", component: DetalheComponent},
+    {path: "detalhe", component: DetalheComponent},
     {path: "login", component:LoginComponent},
     {path: "", component:VitrineComponent}
 ];

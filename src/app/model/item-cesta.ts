@@ -3,4 +3,5 @@ export interface ItemCesta {
     nome: string;
     preco: number;
     quantidade: number;
+    imagem: string;
   }

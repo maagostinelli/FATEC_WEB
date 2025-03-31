@@ -12,10 +12,10 @@ import { Produto } from '../model/produto';
 export class VitrineComponent {
   mensagem: String = "";
   produtos: Produto[] = [
-    {codigo:1, nome:"Furadeira", descritivo:"Furadeira elétrica", valor:100, valorPromo:90,quantidade:5},
-    {codigo:2, nome:"Serra", descritivo:"Serra mármore", valor:120, valorPromo:10,quantidade:6},
-    {codigo:3, nome:"Parafusadeira", descritivo:"Parafusadeira 24v", valor:190, valorPromo:160,quantidade:5},
-    {codigo:4, nome:"Conjunto parafuso", descritivo:"Conjunto de parafusos em caixa", valor:60, valorPromo:45,quantidade:0},
+    {codigo:11, nome:"Café Brasileiro - 180g", descritivo:"Café torrado moído", valor:40.50, valorPromo:38.00,quantidade:5, imagem:"cafe_brazil.jpg"},
+    {codigo:21, nome:"Café Especial Etiópia - 180g", descritivo:"Café etíope torrado moído", valor:56.60, valorPromo:48.00,quantidade:6, imagem:"cafe_ethiopia.jpg"},
+    {codigo:31, nome:"Café de Nuts Especial - 180g", descritivo:"Café torrado notas de avelã", valor:60.00, valorPromo:56.50,quantidade:5, imagem:"cafe_nuts.jpg"},
+    {codigo:41, nome:"Copo colecionável - SP.com", descritivo:"Copo coleção exclusiva de lançamento", valor:60.00, valorPromo:45.00,quantidade:0, imagem:"cafe_graos.jpg"},
   ];
 
   public carregar(obj: Produto){

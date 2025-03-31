@@ -1,14 +1,16 @@
-<div class="container">
-    <h5>Bem Vindo!</h5>
-    <div class="row" >
+<div class="container m-5">
+    <h4>Bem Vindo!</h4>
+    <hr>
+    <div class="row m-2" >
         <div class="col-lg-4 col-sm-12" *ngFor="let obj of produtos">
-            <div class="card" style="width: 380px;">
-                <img class="card-img-top" src="" alt="">
+            <div class="card m-2" style="width: 380px;">
+                <img class="card-img-top rounded w-50 mx-auto img-fluid my-2" src="{{obj.imagem}}" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">{{obj.nome}}</h4>
+                    <h5 class="card-title">{{obj.nome}}</h5>
                     <p class="card-text">{{obj.descritivo}}</p> <br>
                     <p class="class-text"> R$ {{obj.valor}}</p> <br>
                     <a href="./detalhe" class="btn btn-dark" *ngIf="obj.quantidade>0" (click)="carregar(obj);" >Mais detalhes</a>
+                    <a href="./detalhe" class="btn btn-dark disabled" *ngIf="obj.quantidade==0" (click)="carregar(obj);" >Indisponível</a>
                 </div>
             </div>
         </div>

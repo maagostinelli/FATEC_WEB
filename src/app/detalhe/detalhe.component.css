@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+div.container {
+    font-family: 'Josefin Sans', 'Helvetica', sans-serif;
+}
+
+.icon>img {
+    height: 24px;
+    width: 24px;
+}

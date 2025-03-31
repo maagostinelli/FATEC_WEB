@@ -1,35 +1,32 @@
-<div class="container">
-    <h5>Cesta</h5>
+<div class="container m-3 mx-auto">
+    <h4>Cesta</h4>
     <hr>
     <div class="row">
         <div class="col-lg-6">
-            <p>Item</p>
+            <h5>Item</h5>
         </div>
         <div class="col-lg-3">
-            <p>Quantidade</p>
+            <h5>Quantidade</h5>
         </div>
         <div class="col-lg-3">
-            <p>Valor</p>
+            <h5>Valor</h5>
         </div>
-        <div class="row" >
-            <div class="col-lg-6">
-                <p>Item</p>
+        <div class="row" *ngFor="let obj of itens_cesta">
+            <div class="col-lg-6 d-flex justify-content-right align-items-center">
+                <img  class="img-fluid img-cesta mx-3" src="{{obj.imagem}}" alt="">
+                <p>{{obj.nome}}</p>
             </div>
-            <div class="col-lg-3">
-                <p>Quantidade</p>
+            <div class="col-lg-2">
+                <p>{{obj.quantidade}}</p>
             </div>
-            <div class="col-lg-3">
-                <p>Valor</p>
+            <div class="col-lg-2">
+                <p>{{obj.preco * obj.quantidade}}</p>
+            </div>
+            <div class="col-lg-2">
+                <a href=""><img src="" alt=""></a>
             </div>
         </div>
         <hr>
-        <div class="row">
-            <div class="col-lg-4 col-sm-12" >
-                <h4 class=""></h4>
-                <p class="t"></p> <br>
-                <p class=""></p> <br>
-                <a href="" class="">Excluir</a>
-            </div>
-        </div>
+        
     </div>
 </div>
