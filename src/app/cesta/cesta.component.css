@@ -4,6 +4,15 @@ div.container {
     font-family: 'Josefin Sans', 'Helvetica', sans-serif;
 }
 
-.img-cesta {
+.img-produto {
     width: 100px;
+}
+
+.produto-preco {
+    font-weight: bold;
+}
+
+#delete-item {
+    width: 24px;
+    height: 24px;
 }

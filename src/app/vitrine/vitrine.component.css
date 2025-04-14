@@ -3,3 +3,10 @@
 div.container {
     font-family: 'Josefin Sans', 'Helvetica', sans-serif;
 }
+
+.btn-sm {
+    display: flex;
+    border-radius: 42px;
+    text-align: center;
+    vertical-align: middle;
+}

@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
 import { CestaComponent } from './cesta/cesta.component';
 import { DetalheComponent } from './detalhe/detalhe.component';
+import { BuscaComponent } from './busca/busca.component';
 
 export const routes: Routes = [
     {path: "cadastro-cliente", component:CadastroClienteComponent},
@@ -12,5 +13,6 @@ export const routes: Routes = [
     {path: "contato", component:ContatoComponent},
     {path: "detalhe", component: DetalheComponent},
     {path: "login", component:LoginComponent},
+    {path: "busca", component:BuscaComponent},
     {path: "", component:VitrineComponent}
 ];

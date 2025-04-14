@@ -12,7 +12,7 @@ import { Produto } from '../model/produto';
 })
 export class DetalheComponent {
   detalhe_produto: Produto[] = [
-    {codigo:11, nome:"Café Brasileiro - 180g", descritivo:"Café torrado moído", valor:40.50, valorPromo:38.00,quantidade:5, imagem:"cafe_brazil.jpg"},
+    {codigo:11, nome:"Café Raízes do Brasil – 180g", descritivo:"Cultivado em terras brasileiras ricas e tropicais, o Café Raízes do Brasil traz uma torra média equilibrada, corpo marcante e notas sutis de chocolate amargo. Ideal para quem valoriza tradição e sabor na medida certa.", valor:40.50, valorPromo:38.00,quantidade:5, imagem:"cafe_brazil.jpg"},
   ];
 
   public carregar(obj: Produto) {

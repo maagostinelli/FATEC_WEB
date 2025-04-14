@@ -1,1 +1,30 @@
-<p>busca works!</p>
+<div class="container">
+    <div class="title mx-4 mt-5 d-flex">
+        <h4 class="px-2">busca por: </h4>
+        <h4 class="palavra-chave">cafés</h4>
+    </div>
+    <hr>
+    <div class="d-flex align-items-center justify-content-left m-3">
+        <p class="filtro-busca m-2">Filtrar por:</p>
+        <a href="./busca"class="btn btn-sm btn-outline-dark m-1 px-3">Galeria e Arte</a>
+        <a href="./busca"class="btn btn-sm btn-outline-dark m-1 px-3">Cafés</a>
+        <p class="filtro-busca m-2">Ordenar por:</p>
+        <a href="./busca" class="btn btn-sm btn-outline-dark m-1 px-3">Preço</a>
+        <a href="./busca" class="btn btn-sm btn-outline-dark m-1 px-3">Popularidade</a>
+        <a href="./busca" class="btn btn-sm btn-outline-dark m-1 px-3">Avaliação</a>
+    </div>
+    <div class="row m-2" >
+        <div class="col-lg-4 col-sm-12" *ngFor="let obj of produtos">
+            <div class="card m-auto my-2" style="width: 380px;">
+                <img class="card-img-top rounded w-50 mx-auto img-fluid my-2" src="{{obj.imagem}}" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{obj.nome}}</h5>
+                    <p class="card-text">{{obj.descritivo}}</p> <br>
+                    <p class="class-text"> R$ {{obj.valor}}</p> <br>
+                    <a href="./detalhe" class="btn btn-dark" *ngIf="obj.quantidade>0" (click)="carregar(obj);" >Mais detalhes</a>
+                    <a href="./detalhe" class="btn btn-dark disabled" *ngIf="obj.quantidade==0" (click)="carregar(obj);" >Indisponível</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

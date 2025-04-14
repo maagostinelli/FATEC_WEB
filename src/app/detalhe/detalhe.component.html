@@ -1,18 +1,22 @@
 <div class="container m-4">
-    <div class="d-flex align-items-start justify-content-right">
+    <div class="d-flex align-items-start justify-content-right p-3">
         <a href="" class="icon"><img src="ArrowLeft.svg" alt=""></a>
-        <h4>Produto</h4>
+        <h4 class="px-3">Produto</h4>
     </div>
-    <div class="detalhe-produto row">
-        <div class="col-lg-6">
-            <img src="" alt="">
+    <div class="detalhe-produto row d-flex align-items-end justify-content-center" *ngFor="let obj of detalhe_produto" >
+        <div class="col-lg-6 d-flex m-auto justify-content-center align-items-center p-4">
+            <img class=" img-fluid w-50" src="{{obj.imagem}}" alt="">
         </div>
         <div class="col-lg-6">
-            <h4>Título</h4>
-            <p>Descritivo</p>
+            <h4>{{obj.nome}}</h4> <br>
+            <h5 class="font-weight-bold"> Descritivo: </h5>
+            <p>{{obj.descritivo}}</p>
             <div class="d-flex justify-content-between">
-                <h4>Preço</h4>
-                <a href="" class="btn btn-dark m-1 p-3">COMPRAR</a>
+                <div class="preco d-flex justify-content-left align-items-center">
+                    <h4 class="px-3">R$</h4>
+                    <h2>{{obj.valor}}</h2>
+                </div>
+                <a href="cesta" class="btn btn-dark m-1 p-3">COMPRAR</a>
             </div>
         </div>
     </div>

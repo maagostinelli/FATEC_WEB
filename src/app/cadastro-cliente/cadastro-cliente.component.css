@@ -6,7 +6,7 @@ div {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    padding: 20px 20px 20px 20px;
+    padding: 10px 20px 10px 20px;
 }
 
 .content {
@@ -23,8 +23,9 @@ div {
 .form-control {
     font-family: 'Josefin Sans', 'Helvetica', sans-serif;
     color: #323232;
-    width: 300px;
+    width: 400px;
     flex: 0 0 auto;
+    padding: 0px;
 }
 
 .form-label {
@@ -34,7 +35,7 @@ div {
 
 .form-check-input {
     font-family: 'Josefin Sans', 'Helvetica', sans-serif;
-    height: 24px;
+    height: 20px;
     width: 24px;
     margin-right: 20px;
     box-sizing: border-box
@@ -54,7 +55,7 @@ input, select, textarea {
     border: none;
     border-bottom: 2px solid black;
     color: black;
-    width: 250px;
+    width: 300px;
 }
 
 label {
@@ -68,9 +69,9 @@ span {
     font-family: 'Josefin Sans', 'Helvetica', sans-serif;
 }
 
-button {
-    width: 240px;
-    height: 52px;
+a {
+    width: 200px;
+    height: 48px;
     border: 0;
     font-family: 'Josefin Sans', 'Helvetica', sans-serif;
     font-weight: bold;
@@ -80,7 +81,7 @@ button {
 
 }
 
-button:hover {
+a:hover {
     background-color: #ffffff;
     color: #000000;
     border: solid #000000 3px;
