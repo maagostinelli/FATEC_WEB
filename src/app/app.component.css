@@ -12,7 +12,12 @@ header {
 
 #logo {
     height: 36px;
-    width: 58px;
+    width: 36px;
+}
+
+#imglogo {
+    position: absolute;
+    width: 80px;
 }
 
 .pesquisa {
@@ -58,11 +63,17 @@ header {
     text-decoration: underline;
 }
 
+form {
+    max-width: 300px; 
+    width: 100%;
+}
+
 @media screen and (orientation: portrait) {
-    div.header {
-        width: 100%;
+    html, body {
         margin: 0;
         padding: 0;
+        width: 100%;
+        overflow-x: hidden;
     }
 
     #logo, #userIcon {
