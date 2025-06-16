@@ -1,0 +1,35 @@
+<div class="container m-4 mx-auto">
+    <h4 class="m-3">Cesta</h4>
+    <hr>
+    <div class="row">
+        <div class="col-lg-6 d-flex m-auto justify-content-center d-none d-lg-flex">
+            <h5>Itens</h5>
+        </div>
+        <div class="col-lg-6 d-flex m-auto justify-content-center d-none d-lg-block">
+        </div>
+        <div class="row p-3" *ngFor="let obj of lista">
+            <div class="col-lg-6 d-flex justify-content-right align-items-end">
+                <img  class="img-fluid img-produto mx-3 rounded" src="{{obj.imagem}}" alt="">
+                <div class="produto-compra">
+                    <h4>{{obj.nome}}</h4>
+                    <p>Quantidade: {{obj.quantidade}}</p>
+                    <p class="produto-preco">Subtotal: R$ {{obj.valor*obj.quantidade}}</p>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex m-auto justify-content-end align-items-end">
+                    <a href="cesta"><img src="Trash.svg" alt="" id="delete-item"></a>
+            </div>
+        </div>
+        <hr>
+        <div class="row total d-flex justify-content-end align-items-center m-1">
+            <div class="col-lg-6"></div>
+            <div class="col-lg-3 d-flex m-auto justify-content-center align-items-center">
+                <p class="mx-4">Total: </p>
+                <h4 class="produto-preco">{{totalCompra}}</h4>
+            </div>
+            <div class="col-lg-3 d-flex m-auto justify-content-left align-items-end">
+                <a href="" class="btn btn-dark m-1 p-3">CONFIRMAR</a>
+            </div>
+        </div>
+    </div>
+</div>
