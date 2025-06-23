@@ -20,6 +20,7 @@
 #searchIcon {
     height: 36px;
     width: 36px;
+    background-color: transparent;
     border-radius: 18px;
     border:none
 }

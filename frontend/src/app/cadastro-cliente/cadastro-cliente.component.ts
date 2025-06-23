@@ -24,11 +24,9 @@ export class CadastroClienteComponent {
         next: () => {
           this.mensagem = "Cadastro realizado com sucesso!";
           this.cliente = new Cliente(); // Limpa o formulário
-          alert(this.mensagem)
         },
         error: () => {
           this.mensagem = "Ocorreu um erro ao cadastrar. Tente novamente mais tarde.";
-          alert(this.mensagem)
         }
       });
     }

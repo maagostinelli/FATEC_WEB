@@ -9,6 +9,7 @@ import { ItemCesta } from '../model/item-cesta';
   templateUrl: './cesta.component.html',
   styleUrl: './cesta.component.css'
 })
+
 export class CestaComponent {
   lista: ItemCesta[] = [];
   mensagem: string = "";
@@ -35,10 +36,34 @@ export class CestaComponent {
   }
 }
 
-  limpar() {
-  this.lista = [];
-  if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
-    localStorage.removeItem("cesta");
+  finalizar() {
+    let num_compra: number = 0;
+    if (this.lista.length > 0) {
+      alert("Compra finalizada com sucesso! \nNúmero da compra: " + num_compra + " \nTotal: R$ " + this.totalCompra.toFixed(2));
+      num_compra++;
+    } else {
+      alert("Não existem itens na cesta!");
+    }
   }
-}
+
+  limpar(codigo: number) {
+    this.lista = [];
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      const json = localStorage.getItem("cesta");
+      if (json) {
+        let lista: ItemCesta[] = JSON.parse(json);
+        // Remove apenas o item com o código correspondente
+        lista = lista.filter(item => item.codigo !== codigo);
+        localStorage.setItem("cesta", JSON.stringify(lista));
+        this.lista = lista;
+        this.atualizarTotal();
+      }
+    }
+  }
+  atualizarTotal(): void {
+    this.totalCompra = this.lista.reduce(
+      (soma, item) => soma + (item.valor * item.quantidade),
+      0
+    );
+  }
 }

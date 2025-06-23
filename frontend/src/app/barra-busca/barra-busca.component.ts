@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ProdutoService } from '../service/produto.service';
+import { Produto } from '../model/produto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-barra-busca',
@@ -11,14 +14,22 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class BarraBuscaComponent {
-  public termoBusca : string = "";
+  public mensagem: string = "";
+  public lista: Produto[] = [];
+  public termoBusca: string = "";
 
-  fazerBusca(){
-    alert("Busca realizada");
+  constructor(private produtoService: ProdutoService, private router: Router){}
+
+  fazerBusca(termoBusca: string) {
     localStorage.setItem("termoBusca", this.termoBusca);
-    location.href = "busca";
+    this.router.navigate(['/busca', termoBusca]);
     console.log("Busca realizada: " + this.termoBusca);
-    /*
-    */
   }
 }
+
+/*
+@GetMapping("produtos/busca/{termo}")
+public List<Produto> fazerBusca(@PathVariable("termo") String termo){
+    return bd.fazerBusca("%"+ termo + "%");
+}
+*/

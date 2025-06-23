@@ -1,7 +1,7 @@
 <div class="container container-fluid px-3 px-md-5 py-3">
     <div class="title mx-4 mt-5 d-flex">
         <h4 class="px-2">busca por: </h4>
-        <h4 class="palavra-chave">{{termo}}</h4>
+        <h4 class="palavra-chave">{{termoBusca}}</h4>
     </div>
     <hr>
     <div class=" row d-flex align-items-center justify-content-between px-3 px-md-5 py-3">
@@ -22,8 +22,8 @@
                     <h5 class="card-title">{{obj.nome}}</h5>
                     <p class="card-text">{{obj.descritivo}}</p> <br>
                     <p class="class-text"> R$ {{obj.valor}}</p> <br>
-                    <a href="./detalhe" class="btn btn-dark" *ngIf="obj.quantidade>0" (click)="carregar(obj);" >Mais detalhes</a>
-                    <a href="./detalhe" class="btn btn-dark disabled" *ngIf="obj.quantidade==0" (click)="carregar(obj);" >Indisponível</a>
+                    <a class="btn btn-dark" *ngIf="obj.quantidade>0" (click)="abrirDetalhe(obj);" >Mais detalhes</a>
+                    <a class="btn btn-dark disabled" *ngIf="obj.quantidade==0" (click)="carregar(obj);" >Indisponível</a>
                 </div>
             </div>
         </div>

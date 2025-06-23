@@ -9,7 +9,10 @@ import { BuscaComponent } from './busca/busca.component';
 import { SobreComponent } from './sobre/sobre.component';
 
 export const routes: Routes = [
-    {path: "busca", component:BuscaComponent},
+    {
+        path: 'busca/:termo',
+        loadComponent: () => import('./busca/busca.component').then(m => m.BuscaComponent)
+    },
     {path: "cadastro-cliente", component:CadastroClienteComponent},
     {path: "cesta", component:CestaComponent},
     {path: "contato", component:ContatoComponent},

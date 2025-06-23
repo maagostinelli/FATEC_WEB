@@ -4,6 +4,7 @@ import { Produto } from '../model/produto';
 import { ItemCesta } from '../model/item-cesta';
 import { ProdutoService } from '../service/produto.service';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vitrine',
@@ -16,7 +17,7 @@ export class VitrineComponent {
   mensagem: string ="";
   lista: Produto[] = [];
 
-  constructor(private service: ProdutoService) {
+  constructor(private service: ProdutoService, private router: Router) {
     
     // Inicialização do componente
     this.service.carregarVitrine().subscribe({
@@ -53,7 +54,7 @@ export class VitrineComponent {
 
   public abrirDetalhe(obj: Produto) {
     localStorage.setItem("produto", JSON.stringify(obj.codigo));
-    window.location.href = "./detalhe";
+    this.router.navigate(["/detalhe", obj.codigo]);
   }
 
   public carregar(obj: Produto){

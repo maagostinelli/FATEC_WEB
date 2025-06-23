@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="col-lg-6 d-flex m-auto justify-content-end align-items-end">
-                    <a href="cesta"><img src="Trash.svg" alt="" id="delete-item"></a>
+                    <a (click)="limpar(obj.codigo)"><img src="Trash.svg" alt="" id="delete-item"></a>
             </div>
         </div>
         <hr>
@@ -28,7 +28,7 @@
                 <h4 class="produto-preco">{{totalCompra}}</h4>
             </div>
             <div class="col-lg-3 d-flex m-auto justify-content-left align-items-end">
-                <a href="" class="btn btn-dark m-1 p-3">CONFIRMAR</a>
+                <a (click)="finalizar()" class="btn btn-dark m-1 p-3">CONFIRMAR</a>
             </div>
         </div>
     </div>

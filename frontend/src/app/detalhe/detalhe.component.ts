@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Produto } from '../model/produto';
 import { ItemCesta } from '../model/item-cesta';
@@ -19,6 +19,7 @@ export class DetalheComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private produtoService: ProdutoService
   ) {}
 
@@ -39,27 +40,29 @@ export class DetalheComponent implements OnInit {
   }
 
   adicionarNaCesta() {
-    console.log("Adicionando produto na cesta:", this.produto);
-    let novo: ItemCesta = new ItemCesta();
-    novo.codigo = this.produto.codigo;
-    novo.nome = this.produto.nome;
-    novo.valor = this.produto.valor;
-    novo.quantidade = 1;
+    const item: ItemCesta = {
+      codigo: this.produto.codigo,
+      nome: this.produto.nome,
+      valor: this.produto.valor,
+      valorPromo: this.produto.valorPromo,
+      descritivo: this.produto.descritivo,
+      imagem: this.produto.imagem,
+      quantidade: 1,
+      total: this.produto.valor // valor * quantidade
+    };
+
     let lista: ItemCesta[] = [];
 
-    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
-      let json = localStorage.getItem("cesta");
-      if (json == null) {
-        lista.push(novo);
-      } else {
-        lista = JSON.parse(json);
-        lista.push(novo);
-      }
-      localStorage.setItem("cesta", JSON.stringify(lista));
-      window.location.href = "./cesta";
-    } else {
-      console.warn("localStorage não disponível.");
+    const json = localStorage.getItem("cesta");
+    if (json !== null) {
+      lista = JSON.parse(json);
     }
+
+    lista.push(item);
+    localStorage.setItem("cesta", JSON.stringify(lista));
+
+    // Redirecionar para a página da cesta
+    this.router.navigate(['/cesta']);
   }
 }
 

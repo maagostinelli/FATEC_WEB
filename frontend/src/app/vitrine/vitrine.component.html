@@ -27,7 +27,7 @@
                         class="btn btn-dark"
                         [routerLink]="['/detalhe', produto.codigo]"
                         [class.disabled]="produto.quantidade == 0"
-                        (click)="carregar(produto)">
+                        (click)="abrirDetalhe(produto)">
                         {{ produto.quantidade == 0 ? 'Indisponível' : 'Ver Detalhes' }}
                         </a>    
                 </div>

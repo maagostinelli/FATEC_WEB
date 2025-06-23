@@ -2,7 +2,7 @@
     <h4 class="my-4">Novo Cadastro</h4>
     <form (ngSubmit)="gravar()">
         <div class="input-group">
-            <label for="" class="form-label">Nome: </label><input type="text" [(ngModel)]="cliente.nome" name="nome" id="nome" class="form-control form-input" pattern="[A-z\s]{6:100}" required> <br>   
+            <label for="" class="form-label">Nome: </label><input type="text" [(ngModel)]="cliente.nome" name="nome" id="nome" class="form-control form-input" pattern="[A-Za-z\s]{6,100}" required> <br>   
         </div>
         <div class="input-group">
             <label for="" class="form-label">E-mail: </label><input type="email" [(ngModel)]="cliente.email" name="email" id="email" class="form-control" required> <br>
@@ -19,14 +19,11 @@
         <div class="input-group">
             <label for="" class="important form-label">Senha: </label><input type="password" [(ngModel)]="cliente.senha" name="senha" id="senha" class="form-control"> <br>
         </div>
-        <div class="input-group">
-            <label for=""class="important form-label">Confirmação de senha: </label><input type="password" name="" id="conf-senha" class="form-control"> <br>
-        </div>
         <div class="checkbox-group">
             <input type="checkbox" [(ngModel)]="cliente.autoriza" name="autoriza" id="checkbox" class="form-check-input" checked><span>Autorizo o envio de mensagens e ofertas</span> <br>
         </div>
         <div class="align-items-right">
-            <button onclick="gravar()" class="btn btn-dark" type="submit">Gravar</button>
+            <button (click)="gravar()" class="btn btn-dark" type="submit">Gravar</button>
         </div>
         <div class="alert alert-info">{{mensagem}}</div>
     </form>
